@@ -12,6 +12,7 @@ on:
 jobs:
   get-action-data:
     runs-on: ubuntu-latest
+    environment: github-pages
 
     steps:
     - uses: actions/checkout@v2
