@@ -47,7 +47,47 @@
         "author": "Gaurav Nelson",
         "description": "Check if all links are valid in markdown files."
       }
+    },
+    {
+      "repoName": "rajbos-actions/action-gh-release",
+      "action": {
+        "name": "GH Release",
+        "author": "softprops",
+        "description": "Github Action for creating Github Releases"
+      }
+    },
+    {
+      "repoName": "rajbos-actions/slack",
+      "action": {
+        "name": "slack - GitHub Actions Slack integration",
+        "author": "satterly",
+        "description": "Notify Slack of GitHub Actions workflows, jobs and step status."
+      }
+    },
+    {
+      "repoName": "rajbos-actions/action-get-tag",
+      "action": {
+        "name": "Get tag",
+        "author": null,
+        "description": "Get tag name from GITHUB_REF environment variable"
+      }
+    },
+    {
+      "repoName": "rajbos-actions/setup-go",
+      "action": {
+        "name": "Setup Go environment",
+        "author": "GitHub",
+        "description": "Setup a Go environment and add it to the PATH"
+      }
+    },
+    {
+      "repoName": "rajbos-actions/forker",
+      "action": {
+        "name": "GitHub Forker",
+        "author": "lelia",
+        "description": "GitHub action for automating fork creation"
+      }
     }
   ],
-  "lastUpdated": "20210915_0113"
+  "lastUpdated": "20211028_0116"
 }
