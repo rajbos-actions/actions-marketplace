@@ -87,7 +87,15 @@
         "author": "lelia",
         "description": "GitHub action for automating fork creation"
       }
+    },
+    {
+      "repoName": "rajbos-actions/workflow-application-token-action",
+      "action": {
+        "name": "workflow-application-token-action",
+        "author": "peter-murray",
+        "description": "Obtain a temporary access token for a GitHub Application when running in a GitHub Actions Workflow."
+      }
     }
   ],
-  "lastUpdated": "20211201_0123"
+  "lastUpdated": "20211202_0119"
 }
