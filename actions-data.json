@@ -95,7 +95,15 @@
         "author": "peter-murray",
         "description": "Obtain a temporary access token for a GitHub Application when running in a GitHub Actions Workflow."
       }
+    },
+    {
+      "repoName": "rajbos-actions/ansible-lint-action",
+      "action": {
+        "name": "Ansible Lint",
+        "author": "Ansible by Red Hat <info@ansible.com>",
+        "description": "Run Ansible Lint"
+      }
     }
   ],
-  "lastUpdated": "20211202_0119"
+  "lastUpdated": "20211203_0118"
 }
