@@ -103,7 +103,15 @@
         "author": "Ansible by Red Hat <info@ansible.com>",
         "description": "Run Ansible Lint"
       }
+    },
+    {
+      "repoName": "rajbos-actions/github-upload-action",
+      "action": {
+        "name": "Upload to GitHub",
+        "author": "LasyIsLazy",
+        "description": "Upload file to your GitHub repository with Node.js"
+      }
     }
   ],
-  "lastUpdated": "20211203_0118"
+  "lastUpdated": "20211206_0121"
 }
