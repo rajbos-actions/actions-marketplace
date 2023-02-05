@@ -1,3 +1,5 @@
+name: Get available action data
+
 on: 
   push:
     branches:
@@ -15,10 +17,41 @@ jobs:
     environment: github-pages
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: devops-actions/load-available-actions@v1.2.12
+      name: Load available actions
+      id: load-actions
+      with: 
+        PAT: ${{ secrets.PAT }}
+        user: ${{ github.repository_owner }}
+         
+    # todo: convert this part into an action to make it more transferable. Don't forget to update the readme then!
+    - run: npm install fs    
+    - uses: actions/github-script@v5
+      with:
+        script: |
+          let actions = `${{ steps.load-actions.outputs.actions }}`
+          const fs = require("fs");
 
-    - id: update_step
-      shell: pwsh
-      name: Get action data
-      run: | 
-        $updateResult = (.\src\updater.ps1 -orgName ${{ github.repository_owner }} -PAT ${{ secrets.GITHUB_TOKEN }} -marketplaceRepo ${{ github.repository }} -userName "${{ secrets.username }}" -userEmail "${{ secrets.useremail }}" )
+          const fileName = 'actions-data.json'
+          fs.writeFileSync(fileName, actions, function(err) {
+            if(err) {
+              return console.log("error")
+            }
+          })          
+          
+    - name: Upload result file as artefact
+      uses: actions/upload-artifact@v2
+      with: 
+        name: actions
+        path: actions-data.json
+   
+    - name: Upload json to this repository
+      #uses: LasyIsLazy/github-upload-action@v0.1.0
+      uses: rajbos-actions/github-upload-action@v0.2.0
+      with:
+        access-token: ${{ secrets.PAT }}
+        file-path: actions-data.json
+        owner: ${{ github.repository_owner }}
+        repo: actions-marketplace # ${{ github.repository }} doesn't work with this action :-(, it'll fail over the slash and owner name
+        #remote-dir:  // upload in the root
+        branch-name: gh-pages
